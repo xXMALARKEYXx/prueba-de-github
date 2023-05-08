@@ -1,0 +1,15 @@
+C:\Users\gael1\documents\prueba-github\bin\Debug\net6.0\prueba-github.exe
+C:\Users\gael1\documents\prueba-github\bin\Debug\net6.0\prueba-github.deps.json
+C:\Users\gael1\documents\prueba-github\bin\Debug\net6.0\prueba-github.runtimeconfig.json
+C:\Users\gael1\documents\prueba-github\bin\Debug\net6.0\prueba-github.dll
+C:\Users\gael1\documents\prueba-github\bin\Debug\net6.0\prueba-github.pdb
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.csproj.AssemblyReference.cache
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.AssemblyInfoInputs.cache
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.AssemblyInfo.cs
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.csproj.CoreCompileInputs.cache
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.dll
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\refint\prueba-github.dll
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.pdb
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\prueba-github.genruntimeconfig.cache
+C:\Users\gael1\documents\prueba-github\obj\Debug\net6.0\ref\prueba-github.dll
