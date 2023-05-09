@@ -43,22 +43,22 @@ usuarios.edad = Convert.ToInt32(Console.ReadLine());
 try
 {
 
-                        transaction = connection.BeginTransaction();
-                        command.Transaction = transaction;
-                        command.CommandText = "SPRegistro";
-                        command.Parameters.Clear();
-                        command.Parameters.AddWithValue("@Cedula", usuarios.Cedula);
-                        command.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
-                        command.Parameters.AddWithValue("@Edad", usuarios.edad);
-                         command.CommandType = System.Data.CommandType.StoredProcedure;
+transaction = connection.BeginTransaction();
+command.Transaction = transaction;
+command.CommandText = "SPRegistro";
+command.Parameters.Clear();
+command.Parameters.AddWithValue("@Cedula", usuarios.Cedula);
+command.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
+command.Parameters.AddWithValue("@Edad", usuarios.edad);
+command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        int Respuesta = command.ExecuteNonQuery();
+int Respuesta = command.ExecuteNonQuery();
 
-                        Respuesta = command.ExecuteNonQuery();
+Respuesta = command.ExecuteNonQuery();
 
-                        transaction.Commit();
+transaction.Commit();
 
-                        Console.WriteLine($"{Respuesta}");
+Console.WriteLine($"{Respuesta}");
 
 }
 
@@ -69,9 +69,9 @@ catch(Exception error)
 }
 
 
-                    Console.WriteLine("Quiere salir? Y/N");
-                    salir = Console.ReadLine();
-                    Console.Clear();
+Console.WriteLine("Quiere salir? Y/N");
+salir = Console.ReadLine();
+Console.Clear();
 
 }
 
