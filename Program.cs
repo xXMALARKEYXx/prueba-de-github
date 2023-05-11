@@ -17,35 +17,72 @@ connection.Open();
  SqlTransaction transaction = null;
   SqlCommand command = new SqlCommand();
  command.Connection = connection;
- usuarios usuarios = new usuarios();
+ 
+
  string salir = "N";
+  int opcion;
+
+while (salir.ToUpper() == "N")
+{
  Console.WriteLine("Registro");
 
-    Console.WriteLine($"{connection.State}");
+   
 
     Console.WriteLine("");
 
 Console.WriteLine("Bienvenido a la JCE");
 
+
+Console.WriteLine("");
+Console.WriteLine("Para agregar o ver personas existentes pulse [0].");
+opcion = Convert.ToInt32(Console.ReadLine());
+Console.Clear();
+
+ if (opcion == 0)
+ {
+usuarios usuarios = new usuarios();
+ Console.WriteLine($"{connection.State}");
 Console.WriteLine("Digite su ID");
-usuarios.Cedula = Convert.ToInt32(Console.ReadLine());
- command.CommandText = "SPRegistro";
- command.Parameters.Clear();
- command.Parameters.AddWithValue("@Cedula", usuarios.Cedula);
+usuarios.Cedula = Console.ReadLine();
+   command.CommandText = "SPGetUsuarios3";
+command.Parameters.Clear();
+command.Parameters.AddWithValue("@Cedula", usuarios.Cedula);
 command.CommandType = System.Data.CommandType.StoredProcedure;
+SqlDataReader reader = command.ExecuteReader();
+ 
+if (reader.HasRows)
+{
+if (reader.Read())
+{
+Console.WriteLine("Usuarios");
+Console.WriteLine("");
+Console.Write("Nombre: ");
+Console.WriteLine(reader["Nombre"]);
+usuarios.Nombre = reader["Nombre"].ToString();
+
+}
+reader.Close();
+
+}
+
+else
+{
+ reader.Close();
 
 Console.WriteLine("Digite su nombre");
  usuarios.Nombre = Console.ReadLine();
 
 Console.WriteLine("Digite su edad");
 usuarios.edad = Convert.ToInt32(Console.ReadLine());
+}
+ 
 
 try
 {
 
 transaction = connection.BeginTransaction();
 command.Transaction = transaction;
-command.CommandText = "SPRegistro";
+command.CommandText = "SPRegistro3";
 command.Parameters.Clear();
 command.Parameters.AddWithValue("@Cedula", usuarios.Cedula);
 command.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
@@ -72,8 +109,11 @@ catch(Exception error)
 Console.WriteLine("Quiere salir? Y/N");
 salir = Console.ReadLine();
 Console.Clear();
+ }
 
 }
 
 }
 }
+}
+

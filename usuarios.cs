@@ -9,7 +9,7 @@ namespace prueba_github
 {
     public class usuarios
     {
-        public int Cedula { get; set;}
+        public string Cedula { get; set;}
 
         public string Nombre {get; set;}
 
